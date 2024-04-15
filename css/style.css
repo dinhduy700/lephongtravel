@@ -1,0 +1,38 @@
+.body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.d-flex-center {
+  display: flex;
+  align-items: center;
+}
+
+.f-14 {
+  font-size: 14px;
+}
+
+i {
+  margin-right: 5px
+}
+
+header {
+  height: 100px;
+  background-color: #5B598A;
+  color: white;
+}
+
+header .header-content {
+  margin: 10px auto;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+header .header-content .left {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+}
