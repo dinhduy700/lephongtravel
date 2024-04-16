@@ -8,6 +8,9 @@
   display: flex;
   align-items: center;
 }
+.f-10 {
+  font-size: 10px;
+}
 
 .f-14 {
   font-size: 14px;
@@ -17,9 +20,16 @@ i {
   margin-right: 5px
 }
 
+select,
+button
+{
+  padding: 5px;
+  border-radius: 5px;
+}
+
 header {
   height: 100px;
-  background-color: #5B598A;
+  background-color: #16366F;
   color: white;
 }
 
@@ -28,11 +38,86 @@ header .header-content {
   width: 90%;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   padding: 10px;
 }
 
-header .header-content .left {
-  width: 25%;
+header .header-content .first {
+  height: 40%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+header .header-content .first .left {
+  width: 25%;
+  display: flex;
+}
+
+.email {
+  margin-left: 20px;
+}
+
+header .header-content .first .right {
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header .header-content .first .right .social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 35%;
+}
+
+header .header-content .first .right .social span.facebook,
+header .header-content .first .right .social span.twitter,
+header .header-content .first .right .social span.google
+{
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+header .header-content .first .right img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+header .header-content .second {
+  width: 100%;
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .header-content .second .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .header-content .second .logo img {
+  width: 50px;
+  height: 50px;
+}
+
+header .header-content .second .search select{
+  background-color: #16366F;
+  color: white;
+  width: 200px;
+  border: 1px solid white;
+}
+
+header .header-content .second .search button{
+  background-color: #2C54A5;
+  color: white;
+  border: 1px solid white;
+  padding: 6px 15px;
 }
