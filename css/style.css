@@ -48,7 +48,9 @@ a:hover {
   text-decoration: none; /* Không gạch chân */
 }
 
-
+img {
+  vertical-align: middle;
+}
 
 .ml-2 {
   margin-left: 2px;
@@ -176,11 +178,13 @@ header .header-content .second .search button{
   /* width: 100%; */
   /* height: 100px; */
 }
-
-.menu .menu-container {
+.container {
   margin: 0px auto;
   width: 100%;
   max-width: 1200px; 
+}
+.menu .menu-container {
+  
   border-radius: 10px;
   box-shadow: 5px 6px 22px -2px rgba(0,0,0,0.75);
   -webkit-box-shadow: 5px 6px 22px -2px rgba(0,0,0,0.75);
@@ -198,12 +202,27 @@ header .header-content .second .search button{
 /* category */
 .category .card {
   position: relative;
+  
+}
+
+.category .card::after {
+  content: '';
+  position: absolute;
+  /* top: 0; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  /* opacity: 0.5; */
+  background-image: linear-gradient(to bottom,rgba(255,255,255, 0),  rgba(255,0,0,0.5));
 }
 
 .category .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* z-index: -1; */
+  /* position: relative; */
 }
 
 .category .card span {
@@ -222,17 +241,43 @@ header .header-content .second .search button{
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 cột */
   grid-gap: 20px; /* Khoảng cách giữa các item */
+  grid-template-areas: "A A B C" "D E F F";
 }
 
-.item1 {
-  grid-column-start: 1; /* Bắt đầu ở cột 1 */
-  grid-column-end: span 2; /* Kết thúc ở cột 3 (nên gấp đôi 2 cột) */
+/* @media only screen and (max-width: 1000px) {
+  .category .category-container {
+    grid-template-areas: "A B C" "D E E" "F F F" ;
+  }
+} */
+/* .item1 {
+  grid-column-start: 1; 
+  grid-column-end: span 2; 
 }
 
 .item6 {
-  grid-column-start: 3; /* Bắt đầu ở cột 1 */
-  grid-column-end: span 2; /* Kết thúc ở cột 3 (nên gấp đôi 2 cột) */
+  grid-column-start: 3; 
+  grid-column-end: span 2; 
+} */
+.item:nth-child(1) {
+  grid-area: A;
 }
+.item:nth-child(2) {
+  grid-area: B;
+}
+.item:nth-child(3){
+  grid-area: C;
+}
+.item:nth-child(4){
+  grid-area: D;
+}
+.item:nth-child(5){
+  grid-area: E;
+}
+.item:nth-child(6){
+  grid-area: F;
+}
+
+
 
 .category .category-container .card img{
   border-radius: 10px;
