@@ -314,12 +314,12 @@ header .header-content .second .search button{
   font-size: 20px;
   padding: 20px 10px;
 }
-.content > * {
+.list_tour_hot .content > * {
   padding: 5px 15px;
 }
 
 /* Loại bỏ padding của phần tử cuối cùng */
-.content > *:last-child {
+.list_tour_hot .content > *:last-child {
   padding-bottom: 0;
 }
 
@@ -336,6 +336,89 @@ header .header-content .second .search button{
   padding: 10px;
 }
 
+/* special_address */
+.special_address_container {
+  /* position: relative; */
+}
+.special_address_container .topic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 24px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.special_address_container .topic i {
+  margin-bottom: 20px;
+  font-size: 42px;
+}
+
+.special_address_container .topic::before {
+  content: '<';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate3d(50%, -50%, 0);
+  padding: 1px 7px; 
+  color: #fff;
+  background-color: #2C54A5;
+}
+
+.special_address_container .topic::after {
+  content: '>';
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  right: 0;
+  padding: 1px 7px;
+  color: #fff;
+  background-color: #2C54A5;
+}
+
+.list_special_address {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+}
+
+.list_special_address .card {
+  position: relative;
+  background-color: red;
+  width: 25%;
+}
+
+.list_special_address .card .img-container {
+  width: 300px; 
+  height: 300px; 
+  position: relative;
+}
+
+.list_special_address .card .img-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Kích thước hình ảnh là 100% của khung hình */
+  height: 100%; /* Kích thước hình ảnh là 100% của khung hình */
+}
+
+.list_special_address .card .content {
+  width: 100%;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate3d(-25%, -50%, 0);
+}
+.list_special_address .card .content i{
+  margin-right: 5px;
+  color: white;
+}
 /* info_tour_hot */
 .info_tour_hot {
   background-image: url("../images/bg_tour_hot.png");
@@ -477,6 +560,28 @@ header .header-content .second .search button{
 }
 .comment .wrapper_comment .title_comment {
   padding: 30px 0px 0px 0px;
+  position: relative;
+}
+
+.comment .wrapper_comment .title_comment::before {
+  content: '<';
+  position: absolute;
+  right: 50px;
+  top: 0;
+  transform: translate3d(0, 100%, 0);
+  padding: 1px 7px; 
+  color: #fff;
+  background-color: #2C54A5;
+}
+.comment .wrapper_comment .title_comment::after {
+  content: '>';
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate3d(0, 100%, 0);
+  padding: 1px 7px; 
+  color: #fff;
+  background-color: #2C54A5;
 }
 
 .card_comment {
@@ -544,11 +649,46 @@ footer {
   height: 100%;
 }
 
-.title_receive_email {
+.title_receive_email,
+.title_fanpage {
   font-size: 24px;
   font-weight: bold;
 }
 
 .desc_receive_email {
   font-size: 13px;
+}
+
+.receive_email > div {
+  margin-top: 10px;
+}
+.input_receive_email {
+  border: 1px solid #b2b2b2;
+  position: relative;
+  width: 75%;
+}
+
+.input_receive_email i {
+  position: absolute;
+  top: 50%;
+  transform: translate3d(50%, -50%, 0);
+  color: #fff;
+}
+
+.input_receive_email i.send-mail {
+  background-color: #fff;
+  padding: 8px 10px;
+  color: #2C54A5;
+}
+
+.input_receive_email input {
+  width: 70%;
+  padding: 10px 5px;
+  margin-left: 10%;
+  background: none;
+  border: none;
+}
+
+.fanpage > div {
+  margin-top: 10px;
 }
