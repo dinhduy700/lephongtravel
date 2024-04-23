@@ -137,7 +137,7 @@ header .header-content .first .right .social {
   position: relative;
 }
 
-div.social::after {
+header .header-content .first .right div.social::after {
   content: "";
   width: 2px;
   height: 20px;
@@ -543,13 +543,17 @@ header .header-content .second .search button{
   font-weight: bold;
 }
 
-.outside-country {
+.inside-country:hover, 
+.outside-country:hover {
   background-color: #2C54A5;
   color: white;
   border: 1px solid #ffffff;
 }
 
 /* wrapper_news_videos */
+.news_videos {
+  padding-bottom: 30px;
+}
 .wrapper_news_videos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -623,8 +627,21 @@ header .header-content .second .search button{
 }
 
 .wrapper_news_videos .news .area_news .card {
-  /* width: 100%; */
-  display: flex;
+  display: grid;
+  grid-template-columns: 80px auto;
+  grid-gap: 10px;
+  padding: 0px 0px 40px 0px;
+  position: relative;
+}
+
+.wrapper_news_videos .news .area_news .card:not(:last-child)::before { 
+  content: '';
+  position: absolute;
+  bottom: 15%;
+  left: 0;
+  background-color: #d1d0d0;
+  height: 2px;
+  width: 100%;
 }
 
 .wrapper_news_videos .news .area_news .card .thumbnail .ratio{
@@ -647,17 +664,17 @@ header .header-content .second .search button{
 }
 
 .content_news {
-  height: 50px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.news .area_news {
+/* .news .area_news {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 590px;
-}
+} */
 
 .title_news,
 .area_time_news
@@ -679,28 +696,36 @@ header .header-content .second .search button{
 }
 .comment .wrapper_comment {
   font-size: 30px;
-}
-.comment .wrapper_comment .title_comment {
-  padding: 30px 0px 0px 0px;
-  position: relative;
+  
 }
 
-.comment .wrapper_comment .title_comment::before {
+.comment .wrapper_comment .wrapper_title{
+  position: relative;
+  padding: 10px 0px;
+  display: flex;
+}
+
+.comment .wrapper_comment .wrapper_title .comment_border{
+  height: 2px;
+  width: 100%;
+  background-color: #b8b7b7;
+  flex: 1;
+}
+
+.comment .wrapper_comment .wrapper_title::before {
   content: '<';
   position: absolute;
   right: 50px;
   top: 0;
-  transform: translate3d(0, 100%, 0);
   padding: 1px 7px; 
   color: #fff;
   background-color: #2C54A5;
 }
-.comment .wrapper_comment .title_comment::after {
+.comment .wrapper_comment .wrapper_title::after {
   content: '>';
   position: absolute;
   right: 0;
   top: 0;
-  transform: translate3d(0, 100%, 0);
   padding: 1px 7px; 
   color: #fff;
   background-color: #2C54A5;
@@ -808,7 +833,7 @@ footer {
   width: 75%;
 }
 
-.input_receive_email i {
+.input_receive_email i.icon-mail {
   position: absolute;
   top: 50%;
   transform: translate3d(50%, -50%, 0);
@@ -827,6 +852,29 @@ footer {
   margin-left: 10%;
   background: none;
   border: none;
+}
+
+.input_receive_email button.send_mail {
+  padding: 0px 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0px;
+  height: 100%;
+}
+
+.receive_email .social {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #fff;
+}
+
+.receive_email .social a{
+  position: absolute;
+  top: 0;
+  left: 39%;
 }
 
 .fanpage > div {
