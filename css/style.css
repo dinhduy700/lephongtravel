@@ -90,12 +90,19 @@ input {
   align-items: center;
 }
 
+.w-h-100 {
+  width: 100%;
+  height: 100%;
+  padding-top: 50%;
+}
+
 header {
   height: 100px;
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   position: fixed;
   width: 100%;
+  z-index: 1000;
 }
 
 header .header-content {
@@ -197,7 +204,7 @@ header .header-content .second .search button{
 
 /* menu */
 .menu {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .menu .menu-container {
   border-radius: 10px;
@@ -253,9 +260,28 @@ header .header-content .second .search button{
   max-width: 1200px; 
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cột */
-  grid-gap: 20px; /* Khoảng cách giữa các item */
+  grid-template-columns: repeat(4, 1fr); 
+  grid-gap: 20px;
   grid-template-areas: "A A B C" "D E F F";
+}
+
+.category .category-container .ratio{
+  position: relative;
+  padding-top: 35%;
+}
+
+.category .category-container .ratio .ratio_content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.category .category-container .ratio .ratio_content img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .item:nth-child(1) {
@@ -490,15 +516,6 @@ header .header-content .second .search button{
   white-space: nowrap;
   transform: translate3d(-50%, -50%, 0);
   color: #fff;
-  /* width: 100%;
-  padding: 0px;
-  display: flex;
-  align-items: center;
-  color: white;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translate3d(-25%, -50%, 0); */
 }
 .list_special_address .card .content i{
   margin-right: 5px;
@@ -514,9 +531,6 @@ header .header-content .second .search button{
 
 .wrap_info_tour_hot {
   padding: 20px 0px;
-  /* height: 100%; */
-  /* display: flex; */
-  /* flex-direction: column; */
 }
 
 .wrap_info_tour_hot > div {
@@ -576,7 +590,7 @@ header .header-content .second .search button{
 
 .area_news_videos .video .ratio {
   position: relative;
-  padding-top: 75%;
+  padding-top: 70%;
 }
 
 .area_news_videos .video .ratio .ratio_content{
@@ -596,7 +610,7 @@ header .header-content .second .search button{
 
 .area_news_videos .img .ratio {
   position: relative;
-  padding-top: 100%;
+  padding-top: 60%;
 }
 
 .area_news_videos .img .ratio .ratio_content{
@@ -611,19 +625,6 @@ header .header-content .second .search button{
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.area_news_videos img:nth-child(1) {
-  grid-area: A;
-}
-.area_news_videos img:nth-child(2) {
-  grid-area: B;
-}
-.area_news_videos img:nth-child(3) {
-  grid-area: C;
-}
-.area_news_videos img:nth-child(4) {
-  grid-area: D;
 }
 
 .wrapper_news_videos .news .area_news .card {
@@ -646,7 +647,7 @@ header .header-content .second .search button{
 
 .wrapper_news_videos .news .area_news .card .thumbnail .ratio{
   position: relative;
-  padding-top: 100%;
+  padding-top: 60%;
 }
 
 .wrapper_news_videos .news .area_news .card .thumbnail .ratio .ratio_content{
@@ -669,12 +670,6 @@ header .header-content .second .search button{
   flex-direction: column;
   justify-content: space-between;
 }
-/* .news .area_news {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 590px;
-} */
 
 .title_news,
 .area_time_news
@@ -703,6 +698,7 @@ header .header-content .second .search button{
   position: relative;
   padding: 10px 0px;
   display: flex;
+  align-items: flex-end;
 }
 
 .comment .wrapper_comment .wrapper_title .comment_border{
@@ -766,10 +762,28 @@ header .header-content .second .search button{
   border-radius: 100%;
 }
 
-.bg_after_footer {
-  background-image: url("../images/bg_near_footer.png");
+.area_bg_before_footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+}
+.area_bg_before_footer .ratio {
+  position: relative;
+  padding-top: 100%;
+}
+
+.area_bg_before_footer .ratio .ratio_content{
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 200px;
+  height: 100%;
+}
+
+.area_bg_before_footer .ratio .ratio_content img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* bank */
