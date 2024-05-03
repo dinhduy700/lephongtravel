@@ -433,13 +433,14 @@ header .header-content .second .search button{
 }
 .special_address_container .topic {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 20px;
-  font-size: 24px;
-  margin-bottom: 10px;
-  position: relative;
+  justify-content: space-between;
+}
+
+.special_address_container .topic .topic_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .special_address_container .topic i {
@@ -447,32 +448,10 @@ header .header-content .second .search button{
   font-size: 42px;
 }
 
-.special_address_container .topic::before {
-  content: '<';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translate3d(0%, -50%, 0);
-  padding: 1px 7px; 
-  color: #fff;
-  background-color: #2C54A5;
-}
-
-.special_address_container .topic::after {
-  content: '>';
-  position: absolute;
-  top: 50%;
-  transform: translate3d(0%, -50%, 0);
-  right: 0;
-  padding: 1px 7px;
-  color: #fff;
-  background-color: #2C54A5;
-}
-
-.list_special_address {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+.list_special_address .card-container{
+  position: relative;
+  height: 200px;
+  margin: 0px 10px;
 }
 .list_special_address .ratio_card {
     position: relative;
@@ -521,6 +500,32 @@ header .header-content .second .search button{
   margin-right: 5px;
   color: white;
 }
+
+.arrow-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0px 20px;
+  /* padding: 10px 20px; */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.arrow-button.left::before {
+  content: '<';
+  margin-right: 5px;
+}
+
+.arrow-button.right::after {
+  content: '>';
+  margin-left: 5px;
+}
+
+.arrow-button:hover {
+  background-color: #0056b3;
+}
+
 /* info_tour_hot */
 .info_tour_hot {
   background-image: url("../images/bg_tour_hot.png");
@@ -787,13 +792,21 @@ header .header-content .second .search button{
 }
 
 /* bank */
-.bank .container {
+/* .bank .container {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
+} */
+
+.bank .container .marquee {
+  overflow: hidden;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  display: flex;
 }
-.bank .container img{
+
+.bank .container .marquee img {
   width: 270px;
   height: 270px;
 }
