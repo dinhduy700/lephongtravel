@@ -342,12 +342,12 @@
   <div class="special_address">
     <div class="special_address_container container">
       <div class="topic">
-        <button class="arrow-button left prev-btn"></button>
+        <button class="arrow-button left prev-btn-special-address"></button>
         <div class="topic_title">
           <i class="fa-solid fa-location-dot"></i>
           <span>ĐỊA ĐIỂM NỔI BẬT</span>
         </div>
-        <button class="arrow-button right next-btn"></button>
+        <button class="arrow-button right next-btn-special-address"></button>
       </div>
 
       <div class="list_special_address">
@@ -578,9 +578,44 @@
           <span>Ý KIẾN KHÁCH HÀNG</span>
         </div>
         <div class="comment_border"></div>
+        <button class="arrow-button left prev-btn-comment"></button>
+        <button class="arrow-button right next-btn-comment"></button>
       </div>
 
       <div class="area_card_comment">
+        <div class="card_comment">
+          <div class="content_comment">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae perferendis sapiente consequatur incidunt nemo asperiores inventore commodi, vel, porro quas nesciunt aliquid molestias vitae est obcaecati maxime reprehenderit at ea.
+          </div>
+          <div class="info-user">
+            <div class="avartar">
+              <img src="images/avartar_user.png" alt="">
+            </div>
+            <div class="name_user">Alibaba</div>
+          </div>
+        </div>
+        <div class="card_comment">
+          <div class="content_comment">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae perferendis sapiente consequatur incidunt nemo asperiores inventore commodi, vel, porro quas nesciunt aliquid molestias vitae est obcaecati maxime reprehenderit at ea.
+          </div>
+          <div class="info-user">
+            <div class="avartar">
+              <img src="images/avartar_user.png" alt="">
+            </div>
+            <div class="name_user">Alibaba</div>
+          </div>
+        </div>
+        <div class="card_comment">
+          <div class="content_comment">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae perferendis sapiente consequatur incidunt nemo asperiores inventore commodi, vel, porro quas nesciunt aliquid molestias vitae est obcaecati maxime reprehenderit at ea.
+          </div>
+          <div class="info-user">
+            <div class="avartar">
+              <img src="images/avartar_user.png" alt="">
+            </div>
+            <div class="name_user">Alibaba</div>
+          </div>
+        </div>
         <div class="card_comment">
           <div class="content_comment">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae perferendis sapiente consequatur incidunt nemo asperiores inventore commodi, vel, porro quas nesciunt aliquid molestias vitae est obcaecati maxime reprehenderit at ea.
@@ -709,36 +744,99 @@
   <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <script>
     $(document).ready(function () {
-	$(".list_special_address").slick({
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		arrows: false,
-		// arrows: true,
-		infinite: false,
-		autoplay: false,
-    margin: 20,
-	});
-	$(".prev-btn").click(function () {
-		$(".list_special_address").slick("slickPrev");
-	});
+      // marquee('.list_special_address', 'prev-btn-special-address', 'next-btn-special-address');
+      $(".list_special_address").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: false,
+        infinite: false,
+        autoplay: false,
+        margin: 20,
+      });
+      $(".prev-btn-special-address").click(function () {
+        $(".list_special_address").slick("slickPrev");
+      });
 
-	$(".next-btn").click(function () {
-		$(".list_special_address").slick("slickNext");
-	});
-	$(".prev-btn").addClass("slick-disabled");
-	$(".list_special_address").on("afterChange", function () {
-		if ($(".slick-prev").hasClass("slick-disabled")) {
-			$(".prev-btn").addClass("slick-disabled");
-		} else {
-			$(".prev-btn").removeClass("slick-disabled");
-		}
-		if ($(".slick-next").hasClass("slick-disabled")) {
-			$(".next-btn").addClass("slick-disabled");
-		} else {
-			$(".next-btn").removeClass("slick-disabled");
-		}
-	});
-});
+      $(".next-btn-special-address").click(function () {
+        $(".list_special_address").slick("slickNext");
+      });
+      $(".prev-btn-special-address").addClass("slick-disabled");
+      $(".list_special_address").on("afterChange", function () {
+        if ($(".slick-prev").hasClass("slick-disabled")) {
+          $(".prev-btn-special-address").addClass("slick-disabled");
+        } else {
+          $(".prev-btn-special-address").removeClass("slick-disabled");
+        }
+        if ($(".slick-next").hasClass("slick-disabled")) {
+          $(".next-btn-special-address").addClass("slick-disabled");
+        } else {
+          $(".next-btn-special-address").removeClass("slick-disabled");
+        }
+      });
+
+
+      $(".area_card_comment").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: false,
+        infinite: false,
+        autoplay: false,
+        margin: 20,
+      });
+      $(".prev-btn-comment").click(function () {
+        $(".area_card_comment").slick("slickPrev");
+      });
+
+      $(".next-btn-comment").click(function () {
+        $(".area_card_comment").slick("slickNext");
+      });
+      $(".prev-btn-comment").addClass("slick-disabled");
+      $(".area_card_comment").on("afterChange", function () {
+        if ($(".slick-prev").hasClass("slick-disabled")) {
+          $(".prev-btn-comment").addClass("slick-disabled");
+        } else {
+          $(".prev-btn-comment").removeClass("slick-disabled");
+        }
+        if ($(".slick-next").hasClass("slick-disabled")) {
+          $(".next-btn-comment").addClass("slick-disabled");
+        } else {
+          $(".next-btn-comment").removeClass("slick-disabled");
+        }
+      });
+    });
+
+    // function marquee(classContainer, classBtnPrev, classBtnNext)
+    // {
+    //   alert(123);
+    //   $(classContainer).slick({
+    //     slidesToShow: 4,
+    //     slidesToScroll: 1,
+    //     arrows: false,
+    //     infinite: false,
+    //     autoplay: false,
+    //     margin: 20,
+    //   });
+    //   $(classBtnPrev).click(function () {
+    //     $(classContainer).slick("slickPrev");
+    //   });
+
+    //   $(classBtnNext).click(function () {
+    //     $(classContainer).slick("slickNext");
+    //   });
+    //   $(classBtnPrev).addClass("slick-disabled");
+    //   $(classContainer).on("afterChange", function () {
+    //     if ($(".slick-prev").hasClass("slick-disabled")) {
+    //       $(classBtnPrev).addClass("slick-disabled");
+    //     } else {
+    //       $(classBtnPrev).removeClass("slick-disabled");
+    //     }
+    //     if ($(".slick-next").hasClass("slick-disabled")) {
+    //       $(classBtnNext).addClass("slick-disabled");
+    //     } else {
+    //       $(classBtnNext).removeClass("slick-disabled");
+    //     }
+    //   });
+    // }
 
   </script>
 </body>

@@ -433,8 +433,12 @@ header .header-content .second .search button{
 }
 .special_address_container .topic {
   display: flex;
-  padding: 20px;
   justify-content: space-between;
+  align-items: center;
+}
+
+.special_address_container .topic button {
+  padding: 10px;
 }
 
 .special_address_container .topic .topic_title {
@@ -706,6 +710,11 @@ header .header-content .second .search button{
   align-items: flex-end;
 }
 
+.comment .wrapper_comment .wrapper_title button {
+  padding: 10px;
+  margin-left: 5px;
+}
+
 .comment .wrapper_comment .wrapper_title .comment_border{
   height: 2px;
   width: 100%;
@@ -713,24 +722,7 @@ header .header-content .second .search button{
   flex: 1;
 }
 
-.comment .wrapper_comment .wrapper_title::before {
-  content: '<';
-  position: absolute;
-  right: 50px;
-  top: 0;
-  padding: 1px 7px; 
-  color: #fff;
-  background-color: #2C54A5;
-}
-.comment .wrapper_comment .wrapper_title::after {
-  content: '>';
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 1px 7px; 
-  color: #fff;
-  background-color: #2C54A5;
-}
+
 
 .card_comment {
   height: 200px;
@@ -740,9 +732,9 @@ header .header-content .second .search button{
 }
 
 .area_card_comment {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-gap: 20px; */
 }
 .card_comment .content_comment {
   font-size: 14px;
